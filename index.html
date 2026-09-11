@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Cosorolex — luxury watches and accessories with secure crypto checkout." />
+  <title>COSOROLEX — Luxury Watches & Accessories</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="topbar">
+    <span>Free Shipping Worldwide</span><i></i><span>Secure Checkout</span><i></i><span>₿ Crypto Payments Accepted</span>
+    <span class="topbar-right">Login / Register &nbsp; | &nbsp; USD ▾</span>
+  </div>
+
+  <header class="header">
+    <a class="logo" href="#"><span class="logo-mark">◷</span><span><b>COSOROLEX</b><small>LUXURY WATCHES & ACCESSORIES</small></span></a>
+    <nav>
+      <a href="#home">Home</a><a href="#shop">Shop ▾</a><a href="#brands">Brands ▾</a>
+      <a href="#accessories">Accessories ▾</a><a href="#about">About Us</a><a href="#contact">Contact</a>
+    </nav>
+    <div class="header-actions"><button aria-label="Search" onclick="focusSearch()">⌕</button><button aria-label="Wishlist">♡</button><button aria-label="Cart" onclick="openCart()">🛒<em id="cartCount">0</em></button></div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">TIMELESS ELEGANCE</p>
+        <h1>Luxury Watches<br>for Every Moment</h1>
+        <p>Discover premium watches and exclusive accessories from the world's most iconic brands. Pay with crypto. Own more than just time.</p>
+        <a class="gold-btn" href="#shop">SHOP NOW <span>→</span></a>
+      </div>
+      <div class="hero-watch">
+        <div class="watch-face">
+          <span class="brand">COSOROLEX</span><span class="indices">12 &nbsp; 3 &nbsp; 6 &nbsp; 9</span>
+          <div class="hand hour"></div><div class="hand minute"></div><div class="hand second"></div>
+        </div>
+      </div>
+      <aside class="crypto-panel">
+        <p>WE ACCEPT</p><strong>CRYPTO PAYMENTS</strong>
+        <div class="coin-row"><span>₿</span><span>♦</span><span>₮</span><span>$</span><span>≋</span></div>
+        <small>Fast &nbsp;•&nbsp; Secure &nbsp;•&nbsp; Global</small>
+      </aside>
+    </section>
+
+    <section class="benefits">
+      <div><b>🚚</b><strong>Free Worldwide Shipping</strong><small>On all orders over $100</small></div>
+      <div><b>♢</b><strong>Secure Checkout</strong><small>SSL encrypted & protected</small></div>
+      <div><b>₿</b><strong>Crypto Payments</strong><small>BTC, ETH, USDT, USDC & more</small></div>
+      <div><b>◌</b><strong>Authenticity Guaranteed</strong><small>100% genuine products</small></div>
+      <div><b>♧</b><strong>24/7 Customer Support</strong><small>We're here to help</small></div>
+    </section>
+
+    <section class="products-section" id="shop">
+      <div class="section-heading">
+        <div><p class="eyebrow">CURATED COLLECTION</p><h2>Featured Watches</h2></div>
+        <div class="controls"><input id="search" placeholder="Search watches..." oninput="renderProducts()"><select id="brandFilter" onchange="renderProducts()"><option value="">All Brands</option></select></div>
+      </div>
+      <div class="products" id="products"></div>
+    </section>
+
+    <section class="accessories" id="accessories">
+      <div class="accessory-copy"><p class="eyebrow">COMPLETE YOUR LOOK</p><h2>Premium Watch Accessories</h2><p>From straps to storage, find the perfect accessories to match your style.</p><a class="gold-btn" href="#shop">SHOP ACCESSORIES →</a></div>
+      <div class="accessory-grid">
+        <article><div class="accessory-img strap"></div><b>Watch Straps</b><a href="#shop">Shop Now →</a></article>
+        <article><div class="accessory-img box"></div><b>Watch Boxes</b><a href="#shop">Shop Now →</a></article>
+        <article><div class="accessory-img winder"></div><b>Winders</b><a href="#shop">Shop Now →</a></article>
+        <article><div class="accessory-img tools"></div><b>Tools & Care</b><a href="#shop">Shop Now →</a></article>
+      </div>
+    </section>
+
+    <section class="brands" id="brands">
+      <p class="eyebrow">TRUSTED NAMES</p><h2>Top Brands</h2>
+      <div class="brand-list"><span>ROLEX</span><span>Ω OMEGA</span><span>TAG HEUER</span><span>Cartier</span><span>BREITLING</span><span>◈ TUDOR</span><span>SEIKO</span><span>IWC</span></div>
+    </section>
+
+    <section class="crypto-banner">
+      <div><div class="coin-large">₿</div><div><p class="eyebrow">MODERN PAYMENTS</p><h2>Pay with Cryptocurrency</h2><p>Fast, secure, and globally accepted. Choose your preferred digital currency at checkout.</p></div></div>
+      <div class="crypto-list"><span>₿<small>Bitcoin</small></span><span>♦<small>Ethereum</small></span><span>₮<small>Tether</small></span><span>$<small>USD Coin</small></span><span>≋<small>Solana</small></span></div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="footer-grid">
+      <div><a class="logo light" href="#"><span class="logo-mark">◷</span><span><b>COSOROLEX</b><small>LUXURY WATCHES & ACCESSORIES</small></span></a><p>Premium watches. Exclusive accessories.<br>Crypto payments. A new way to shop.</p><p><a href="mailto:sales@cosmorolex.com">sales@cosmorolex.com</a><br><a href="tel:+19316741424">(931) 674-1424</a><br>Tennessee, USA</p></div>
+      <div><h4>Quick Links</h4><a href="#home">Home</a><a href="#shop">Shop</a><a href="#brands">Brands</a><a href="#accessories">Accessories</a></div>
+      <div><h4>Customer Service</h4><a href="#">Shipping & Returns</a><a href="#">Privacy Policy</a><a href="#">Terms & Conditions</a><a href="#">FAQ</a></div>
+      <div><h4>Contact Us</h4><a href="mailto:sales@cosmorolex.com">sales@cosmorolex.com</a><a href="tel:+19316741424">(931) 674-1424</a><p>Cosorolex Watches<br>Tennessee, USA</p><h4 class="newsletter-title">Stay in the Loop</h4><form onsubmit="subscribe(event)"><input type="email" required placeholder="Your email address"><button>→</button></form></div>
+    </div>
+    <div class="copyright">© 2026 Cosorolex. All rights reserved. <span>Crypto Payments Powered by Secure Gateway</span></div>
+  </footer>
+
+  <div class="modal" id="cartModal" aria-hidden="true">
+    <div class="modal-card"><button class="close" onclick="closeCart()">×</button><h2>Your Cart</h2><div id="cartItems"></div><div class="cart-total"><span>Total</span><strong id="cartTotal">$0.00</strong></div><button class="checkout-btn" onclick="openCheckout()">CHECKOUT WITH CRYPTO</button></div>
+  </div>
+
+  <div class="modal" id="checkoutModal" aria-hidden="true">
+    <div class="modal-card checkout"><button class="close" onclick="closeCheckout()">×</button><p class="eyebrow">SECURE PAYMENT</p><h2>Crypto Checkout</h2><p>Select a cryptocurrency to continue. This demo UI is ready to connect to a real processor such as Coinbase Commerce or a custom wallet/payment API.</p><div class="payment-options"><button onclick="selectCrypto(this,'BTC')">₿<span>Bitcoin</span></button><button onclick="selectCrypto(this,'ETH')">♦<span>Ethereum</span></button><button onclick="selectCrypto(this,'USDT')">₮<span>USDT</span></button><button onclick="selectCrypto(this,'USDC')">$<span>USDC</span></button></div><button class="checkout-btn" onclick="payNow()">PAY NOW</button><small id="paymentMessage"></small></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
