@@ -1,0 +1,12 @@
+let products=[],cart=JSON.parse(localStorage.getItem("cosorolex-cart")||"[]");
+const $=id=>document.getElementById(id),money=n=>new Intl.NumberFormat("en-US",{style:"currency",currency:"USD"}).format(Number(n)||0);
+async function loadProducts(){try{products=await (await fetch("products.json?"+Date.now())).json()}catch{products=[]}init()}
+function init(){let brands=[...new Set(products.map(p=>p.brand).filter(Boolean))];if($("brandFilter"))$("brandFilter").innerHTML='<option value="">All Brands</option>'+brands.map(b=>`<option>${b}</option>`).join("");renderProducts();updateCartCount()}
+function renderProducts(){if(!$("products"))return;let q=($("search")?.value||"").toLowerCase(),b=$("brandFilter")?.value||"";let list=products.filter(p=>(!b||p.brand===b)&&(p.name+" "+p.brand).toLowerCase().includes(q));$("products").innerHTML=list.map(p=>{let im=p.images?.[0]?`<img src="${p.images[0]}" alt="${p.name}">`:`<div class="mini-watch"></div>`;return `<article class="product"><div class="product-image">${im}</div><div class="product-info"><small>${p.brand||""}</small><h3>${p.name}</h3><span class="ref">${p.ref?`Ref. ${p.ref}`:""}</span><span class="price">${money(p.price)}</span><button class="add" onclick="addToCart('${p.id}')">ADD TO CART</button></div></article>`}).join("")||"<p>No watches found.</p>"}
+function addToCart(id){let p=products.find(x=>String(x.id)===String(id));if(p){cart.push(p);localStorage.setItem("cosorolex-cart",JSON.stringify(cart));updateCartCount();openCart()}}
+function updateCartCount(){if($("cartCount"))$("cartCount").textContent=cart.length}
+function openCart(){if(!$("cartModal"))return;$("cartModal").classList.add("open");$("cartItems").innerHTML=cart.map((p,i)=>`<div>${p.name} — ${money(p.price)} <button onclick="cart.splice(${i},1);localStorage.setItem('cosorolex-cart',JSON.stringify(cart));openCart();updateCartCount()">Remove</button></div>`).join("")||"<p>Your cart is empty.</p>";$("cartTotal").textContent=money(cart.reduce((a,p)=>a+Number(p.price||0),0))}
+function closeCart(){$("cartModal")?.classList.remove("open")}
+function focusSearch(){$("search")?.focus();$("shop")?.scrollIntoView({behavior:"smooth"})}
+function subscribe(e){e.preventDefault();alert("Thanks for subscribing to Cosmorolex Watches.");e.target.reset()}
+loadProducts();

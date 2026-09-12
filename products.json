@@ -1,0 +1,22 @@
+[
+  {
+    "id": "demo-1",
+    "brand": "ROLEX",
+    "name": "Submariner Date",
+    "ref": "126610LN",
+    "price": 12500,
+    "description": "Iconic luxury dive watch.",
+    "stock": 1,
+    "images": []
+  },
+  {
+    "id": "demo-2",
+    "brand": "OMEGA",
+    "name": "Seamaster Diver 300M",
+    "ref": "210.30.42.20.03.001",
+    "price": 6800,
+    "description": "Precision and performance.",
+    "stock": 1,
+    "images": []
+  }
+]
