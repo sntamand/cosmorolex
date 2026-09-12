@@ -1,3 +1,4 @@
-// Replace these two values with your Supabase project values.
-window.SUPABASE_URL = "https://YOUR-PROJECT.supabase.co";
-window.SUPABASE_ANON_KEY = "YOUR-SUPABASE-ANON-KEY";
+SUPABASE_URL=https://uihppcqdwmrleqfhlegk.supabase.co
+SUPABASE_PUBLISHABLE_KEY=sb_publishable_K67ayEnp2vlgsXd1cp-dhQ_SsjfWQev
+SUPABASE_SECRET_KEY=sb_secret_StTK9TdD6mqevZldtsh8cQ_x5vh78oa
+SUPABASE_JWKS_URL=https://uihppcqdwmrleqfhlegk.supabase.co/auth/v1/.well-known/jwks.json
