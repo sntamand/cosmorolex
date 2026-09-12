@@ -1,0 +1,10 @@
+{
+  "name":"cosmorolex-watches-store",
+  "version":"1.0.0",
+  "private":true,
+  "description":"Cosmorolex Watches ecommerce starter with admin product uploads and crypto checkout option",
+  "main":"server.js",
+  "scripts":{"start":"node server.js","dev":"node server.js"},
+  "engines":{"node":">=20"},
+  "dependencies":{"express":"^5.1.0","multer":"^2.0.2"}
+}
